@@ -1,9 +1,15 @@
-package waar;
+package waar.Activities;
+
+import waar.Services.NotificationService;
+import waar.lib.NotificationHandler;
 
 import fr.waar.android.R;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
@@ -29,7 +35,9 @@ public class WaaRActivity extends Activity {
             webView.loadUrl(waarUrl);
             //webView.loadData(pageWeb, mimeType, encoding);
             //webView.loadUrl(waarUrl);
-
+             
+            //startService(new Intent(getApplicationContext(), NotificationService.class));
+            NotificationHandler.createNotify(getApplicationContext(), "Waar.fr", "Vous avez un nouveau message privé.");
     }
     
 	@Override
@@ -39,6 +47,13 @@ public class WaaRActivity extends Activity {
 			return true;
 		}
 		return super.onKeyDown(keyCode, event);
+	}
+	
+    @Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+	  MenuInflater inflater = getMenuInflater();
+	  inflater.inflate(R.layout.optionmenu, menu);
+	  return true;
 	}
 
 	private class myWebViewClient extends WebViewClient {
