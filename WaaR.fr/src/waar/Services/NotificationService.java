@@ -3,6 +3,7 @@ package waar.Services;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import waar.lib.NotificationController;
 import waar.lib.NotificationHandler;
 import waar.lib.Params;
 
@@ -38,8 +39,8 @@ public class NotificationService extends Service {
 
 	    	@Override
 	        public void run() {
-	    		NotificationHandler.createNotify(getApplicationContext(), "Waar.fr", "Vous avez un nouveau message privé.");
-
+	    		//NotificationHandler.createNotify(getApplicationContext(), "Waar.fr", "Vous avez un nouveau message privé.");
+	    		NotificationController.execute(getApplicationContext());
 	        } 
 	    }, 0, 10000); 
 	}

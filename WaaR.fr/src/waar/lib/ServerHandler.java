@@ -66,9 +66,9 @@ public class ServerHandler {
 
 	        HttpEntity entity = response.getEntity();
 	        
-	        HTMLCodeResponse = EntityUtils.toString(entity, HTTP.UTF_8);
+	        String data = EntityUtils.toString(entity, HTTP.UTF_8);
 	        
-	        return HTMLCodeResponse;
+	        return data;
 
 	    } catch (ClientProtocolException e) {
 	        // TODO Auto-generated catch block

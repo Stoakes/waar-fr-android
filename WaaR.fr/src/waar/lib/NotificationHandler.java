@@ -10,9 +10,10 @@ import android.content.Intent;
 
 public class NotificationHandler{
 
-	public static int ID_NOTIFICATION = 1988;
-	public static int NBNotification = 0;
+	public static int ID_NOTIFICATION ;
 		
+	//TODO faire singleton !
+	
 	public static void createNotify(Context context, String titre, String texte){
 		
     	//On cr�er un "gestionnaire de notification"
@@ -39,8 +40,7 @@ public class NotificationHandler{
         //Ici les chiffres correspondent � 0sec de pause, 0.2sec de vibration, 0.1sec de pause, 0.2sec de vibration, 0.1sec de pause, 0.2sec de vibration
         //Vous pouvez bien entendu modifier ces valeurs � votre convenance
         notification.vibrate = new long[] {0,100,200,300};
-        
-        
+
  
         //Enfin on ajoute notre notification et son ID � notre gestionnaire de notification
         notificationManager.notify(ID_NOTIFICATION, notification);
