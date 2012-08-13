@@ -7,6 +7,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.media.RingtoneManager;
 
 public class NotificationHandler{
 
@@ -14,8 +15,18 @@ public class NotificationHandler{
 			
 	public static void createNotify(Context context, WaarNotification n){
 		
+		NotificationHandler.createNotify(context, n, true);
+    	
+    }
+ 
+	public static void cancelNotify(Context context, WaarNotification n){
     	NotificationManager notificationManager = (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
-   	
+    	notificationManager.cancel(n.id_notification);
+    }
+	
+	public static void createNotify(Context context, WaarNotification n, boolean vibrateAndSing){		
+    	NotificationManager notificationManager = (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
+	   	
     	int icon = fr.waar.android.R.drawable.waar_notification_icon;
     	Notification notification = new Notification(icon, Params.NotificationPopUp , System.currentTimeMillis());  
  
@@ -26,13 +37,21 @@ public class NotificationHandler{
         String titreNotification = Params.WAAR_SITE_NAME;
         notification.setLatestEventInfo(context, titreNotification, n.getTexte_notification(), pendingIntent);
         //Ici les chiffres correspondent � 0sec de pause, 0.2sec de vibration, 0.1sec de pause, 0.2sec de vibration, 0.1sec de pause, 0.2sec de vibration
-        notification.vibrate = new long[] {0,100,50,100};
+        
+        if (vibrateAndSing)
+        {
+            notification.vibrate = new long[] {0,100,50,100};
+            notification.audioStreamType = Notification.STREAM_DEFAULT;
+            
+            notification.sound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+            
+            notification.ledOnMS  = 200;    //Set led blink (On in ms)
+            notification.ledOffMS = 200;    //Set led blink (Off in ms)
+            notification.ledARGB = Notification.DEFAULT_LIGHTS;   //Set led color
+        }
+
 
         notificationManager.notify(n.id_notification , notification);
     }
- 
-	public static void cancelNotify(Context context, WaarNotification n){
-    	NotificationManager notificationManager = (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
-    	notificationManager.cancel(n.id_notification);
-    }
+	
 }

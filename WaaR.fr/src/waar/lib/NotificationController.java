@@ -22,21 +22,23 @@ public class NotificationController {
 				
 		Params.loadAllParams(c);
 		
+		//pour test
+		Params.pseudo = "Guizmo";
+		Params.passWord = "testtest";
+
 		waar.lib.NotificationManager.init_notifications(c);
 		
+
 		ArrayList<NameValuePair> paramList = new ArrayList<NameValuePair>();
-		
-		Params.pseudo = "Guizmo";
-		Params.md5Password = "testtest";
-		
+				
 		paramList.add(new BasicNameValuePair("pseudo", Params.pseudo));
-		paramList.add(new BasicNameValuePair("pwd", Params.md5Password));
+		paramList.add(new BasicNameValuePair("pwd", Params.passWord));
 		
 		String data = ServerHandler.postData(url, paramList);
 		Log.e("DATA RECEIVED", data);
 		
 		NotificationController.decodeData(data);
-		
+
 		waar.lib.NotificationManager.MaJ_Notifcations(c);
 
 		return true;

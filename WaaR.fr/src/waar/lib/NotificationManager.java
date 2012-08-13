@@ -20,10 +20,10 @@ public class NotificationManager {
 			notifications_avant = (ArrayList<WaarNotification> ) notifications.clone();
 		
 		notifications = new ArrayList<WaarNotification>();
-		notifications.add(new WaarNotification("JdB", 0, 42001, "Vous avez %s nouvelle(s) entrée(s) dans votre Journal de Bord."));
-		notifications.add(new WaarNotification("News", 0, 42002, "%s nouvelle(s) news est diponible sur " + Params.WAAR_SITE_NAME + " !",WaaRActivity.class));
-		notifications.add(new WaarNotification("Ally", 0, 42003, "Vous avez %s nouveau(x) message(s) d'alliance",WaaRActivity.class));
-		notifications.add(new WaarNotification("MP", 0, 42004, "Vous avez %s nouveau(x) message(s) privé",WaaRActivity.class));
+		notifications.add(new WaarNotification("JdB", 0, 42001, "Vous avez %s nouvelle(s) entrée(s) dans votre Journal de Bord.", Params.WAAR_SITE + "/royaume.php"));
+		notifications.add(new WaarNotification("News", 0, 42002, "%s nouvelle(s) news est diponible sur " + Params.WAAR_SITE_NAME + " !",Params.WAAR_SITE + "/news.php"));
+		notifications.add(new WaarNotification("Ally", 0, 42003, "Vous avez %s nouveau(x) message(s) d'alliance",Params.WAAR_SITE + "/alliance.php"));
+		notifications.add(new WaarNotification("MP", 0, 42004, "Vous avez %s nouveau(x) message(s) privé", Params.WAAR_SITE + "/messages.php"));
 	}
 	
 	/**
@@ -48,7 +48,7 @@ public class NotificationManager {
 	{
 		if (notifications_avant != null)
 		{
-			for (WaarNotification n : NotificationManager.notifications)
+			for (WaarNotification n : NotificationManager.notifications_avant)
 			{
 				if (n.categorie.equals(categorie))
 					return n;
@@ -83,11 +83,13 @@ public class NotificationManager {
 			{
 				if (n_avant==null || n_avant.nombre_notifications < n.nombre_notifications)
 				{
+					//nouvelle notification ou nombre de notificatiosn augmenté
 					NotificationHandler.createNotify(c, n);
 				}
 				else
 				{
-					
+					//on a une notification, mais son nom a diminué.
+					NotificationHandler.cancelNotify(c,n);
 					//NotificationHandler.cancelNotify(c,n);
 				}
 			}
