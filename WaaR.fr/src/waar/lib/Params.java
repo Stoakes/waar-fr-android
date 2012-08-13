@@ -21,7 +21,7 @@ public class Params {
 	public static final String NOTIF_PAGE = "/ajax/get_notifications_mobile.php";
 	
 	public static final String  NotificationTitle = "Waar Beta";
-	
+	public static final String  NotificationPopUp = "Notification(s) Waar !";
 
 	
 	public static void loadAllParams(Context c){

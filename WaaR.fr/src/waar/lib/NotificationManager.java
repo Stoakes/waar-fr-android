@@ -6,6 +6,7 @@ import waar.Activities.WaaRActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 
 public class NotificationManager {
 	
@@ -86,7 +87,8 @@ public class NotificationManager {
 				}
 				else
 				{
-					NotificationHandler.cancelNotify(c,n);
+					
+					//NotificationHandler.cancelNotify(c,n);
 				}
 			}
 			else

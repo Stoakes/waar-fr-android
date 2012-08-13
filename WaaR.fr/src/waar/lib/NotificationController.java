@@ -26,9 +26,12 @@ public class NotificationController {
 		
 		ArrayList<NameValuePair> paramList = new ArrayList<NameValuePair>();
 		
+		Params.pseudo = "Guizmo";
+		Params.md5Password = "testtest";
+		
 		paramList.add(new BasicNameValuePair("pseudo", Params.pseudo));
 		paramList.add(new BasicNameValuePair("pwd", Params.md5Password));
-	
+		
 		String data = ServerHandler.postData(url, paramList);
 		Log.e("DATA RECEIVED", data);
 		
@@ -54,6 +57,7 @@ public class NotificationController {
 		{
 			if (element.contains("JdB"))
 			{
+				
 				nb_notifications = Integer.parseInt(element.replace(" JdB", ""));
 				waar.lib.NotificationManager.getNotification("JdB").nombre_notifications = nb_notifications;
 			}

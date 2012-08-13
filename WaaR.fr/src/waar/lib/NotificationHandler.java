@@ -17,7 +17,7 @@ public class NotificationHandler{
     	NotificationManager notificationManager = (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
    	
     	int icon = fr.waar.android.R.drawable.waar_notification_icon;
-    	Notification notification = new Notification(icon, "Waar : 1 MP !", System.currentTimeMillis());  
+    	Notification notification = new Notification(icon, Params.NotificationPopUp , System.currentTimeMillis());  
  
     	//Le PendingIntent c'est ce qui va nous permettre d'atteindre notre deuxi�me Activity
     	//ActivityNotification sera donc le nom de notre seconde Activity
@@ -28,7 +28,7 @@ public class NotificationHandler{
         //Ici les chiffres correspondent � 0sec de pause, 0.2sec de vibration, 0.1sec de pause, 0.2sec de vibration, 0.1sec de pause, 0.2sec de vibration
         notification.vibrate = new long[] {0,100,50,100};
 
-        notificationManager.notify(ID_NOTIFICATION, notification);
+        notificationManager.notify(n.id_notification , notification);
     }
  
 	public static void cancelNotify(Context context, WaarNotification n){

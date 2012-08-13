@@ -35,8 +35,6 @@ public class ServerHandler {
 	    String HTMLCodeResponse = "";
 
 	    try {
-	    	//Mode debug retir� ->
-	    	paramList.add(new BasicNameValuePair("debug", "0"));
 	    	
 	    	HttpParams params = new BasicHttpParams();
 			HttpProtocolParams.setVersion(params, HttpVersion.HTTP_1_1);
@@ -55,7 +53,6 @@ public class ServerHandler {
 	        	//TODO gérer les notifications d'erreurs
 	        	
 	        }
-	        Log.e("HTTP_RESPONSE", String.valueOf(response.getStatusLine().getStatusCode()));
 	        
 	        HttpEntity entity = response.getEntity();
 	        
