@@ -2,6 +2,7 @@ package waar.Activities;
 
 import waar.Services.NotificationService;
 import waar.lib.NotificationHandler;
+import waar.lib.NotificationManager;
 
 import fr.waar.android.R;
 import android.app.Activity;
@@ -26,7 +27,7 @@ public class WaaRActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
     		super.onCreate(savedInstanceState);
             setContentView(R.layout.main);
-            
+                        
             webView = (WebView) findViewById(R.id.WebView);
             
             //pageWeb = getPage(waarUrl);
@@ -36,8 +37,8 @@ public class WaaRActivity extends Activity {
             //webView.loadData(pageWeb, mimeType, encoding);
             //webView.loadUrl(waarUrl);
              
-            //startService(new Intent(getApplicationContext(), NotificationService.class));
-            NotificationHandler.createNotify(getApplicationContext(), "Waar.fr", "Vous avez un nouveau message privé.");
+            startService(new Intent(getApplicationContext(), NotificationService.class));
+            //NotificationHandler.createNotify(getApplicationContext(), "Waar.fr", "Vous avez un nouveau message privé.");
     }
     
 	@Override

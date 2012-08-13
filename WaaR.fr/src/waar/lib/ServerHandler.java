@@ -19,6 +19,8 @@ import org.apache.http.params.HttpProtocolParams;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 
+import android.util.Log;
+
 public class ServerHandler {
 	
 	private static final String LOG_TAG = "Log : ";
@@ -46,24 +48,15 @@ public class ServerHandler {
 	        // On ex�cute la requ�te tout en r�cup�rant la r�ponse
 	        HttpResponse response = httpclient.execute(httppost);
 	        
-	        /*
-	        //On r�cup�re la r�ponse dans un InputStream
-    		InputStream inputStream = response.getEntity().getContent();
- 
-    		//On cr�e un bufferedReader pour pouvoir stocker le r�sultat dans un string
-    		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"));
- 
-    		
-    		
-    		
-    		
-    		//On lit ligne � ligne le bufferedReader pour le stocker dans le stringBuffer
-    		String ligneCodeHTML = bufferedReader.readLine();
-       		while (ligneCodeHTML != null){
-    			HTMLCodeResponse += ligneCodeHTML;
-    			ligneCodeHTML = bufferedReader.readLine();
-    		}*/
-
+	        if( response.getStatusLine().getStatusCode() != 200)
+	        {
+	        	
+	        	//Allo Houston, on a une problème !
+	        	//TODO gérer les notifications d'erreurs
+	        	
+	        }
+	        Log.e("HTTP_RESPONSE", String.valueOf(response.getStatusLine().getStatusCode()));
+	        
 	        HttpEntity entity = response.getEntity();
 	        
 	        String data = EntityUtils.toString(entity, HTTP.UTF_8);
