@@ -36,17 +36,17 @@ public class NotificationService extends Service {
 	
 	@Override
 	public void onStart(Intent intent, int startId)
-	{		
+	{	
+		
 	    t.scheduleAtFixedRate(new TimerTask() {
 
 	    	@Override
 	        public void run() {
-	    		//NotificationHandler.createNotify(getApplicationContext(), "Waar.fr", "Vous avez un nouveau message privé.");
-	    		Looper.prepare();
+//	    		Looper.prepare();
 	    		NotificationController.execute(getApplicationContext());
-	    		Looper.loop();
+//	    		Looper.loop();
 	        } 
-	    }, 0, 10000); 
+	    }, 0, 10000);
 	}
 
 		

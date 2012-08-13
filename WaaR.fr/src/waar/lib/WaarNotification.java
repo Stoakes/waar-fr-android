@@ -1,5 +1,6 @@
 package waar.lib;
 
+import android.content.Intent;
 import waar.Activities.WaaRActivity;
 
 
@@ -29,7 +30,7 @@ public class WaarNotification {
 		this.nombre_notifications = nombre_notifications;
 		this.id_notification = id_notification;
 		this.texte_notification = texte_notification;
-		this.intentCible = new WaaRActivity(url);
+//		this.intentCible = new WaaRActivity(url);
 	}
 	
 	public WaarNotification(String categorie, int nombre_notifications,
@@ -45,13 +46,13 @@ public class WaarNotification {
 		String txt =  this.texte_notification.replace("%s", this.nombre_notifications.toString());
 		if (this.nombre_notifications > 1)
 		{
-			txt =  this.texte_notification.replace("(s)", "s");
-			txt =  this.texte_notification.replace("(x)", "x");
+			txt =  txt.replace("(s)", "s");
+			txt =  txt.replace("(x)", "x");
 		}
 		else if(this.nombre_notifications == 1)
 		{
-			txt =  this.texte_notification.replace("(s)", "");
-			txt =  this.texte_notification.replace("(x)", "");
+			txt =  txt.replace("(s)", "");
+			txt =  txt.replace("(x)", "");
 		}
 		return txt;
 	}

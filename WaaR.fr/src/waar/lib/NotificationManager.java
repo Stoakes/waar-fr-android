@@ -86,11 +86,14 @@ public class NotificationManager {
 					//nouvelle notification ou nombre de notificatiosn augmenté
 					NotificationHandler.createNotify(c, n);
 				}
+				else if(n_avant.nombre_notifications == n.nombre_notifications)
+				{
+					//on ne fait rien !
+				}
 				else
 				{
-					//on a une notification, mais son nom a diminué.
-					NotificationHandler.cancelNotify(c,n);
-					//NotificationHandler.cancelNotify(c,n);
+					//on a une notification, mais son nombre a diminué.
+					NotificationHandler.createNotify(c, n, false);
 				}
 			}
 			else

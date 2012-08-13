@@ -59,7 +59,6 @@ public class NotificationController {
 		{
 			if (element.contains("JdB"))
 			{
-				
 				nb_notifications = Integer.parseInt(element.replace(" JdB", ""));
 				waar.lib.NotificationManager.getNotification("JdB").nombre_notifications = nb_notifications;
 			}

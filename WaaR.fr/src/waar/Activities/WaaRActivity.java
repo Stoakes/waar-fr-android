@@ -9,6 +9,7 @@ import fr.waar.android.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Looper;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -41,9 +42,8 @@ public class WaaRActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
     		super.onCreate(savedInstanceState);
             setContentView(R.layout.main);
-             
+            
             startService(new Intent(getApplicationContext(), NotificationService.class));
-            //NotificationHandler.createNotify(getApplicationContext(), "Waar.fr", "Vous avez un nouveau message privé.");
                        
             loadPage();
     }

@@ -21,5 +21,6 @@
             </intent-filter>
         </activity>
         <service android:name="waar.Services.NotificationService"></service>
+        <activity android:name="waar.Activities.OptionsActivity"></activity>
     </application>
 </manifest>

@@ -38,7 +38,7 @@ public class NotificationHandler{
         //Ici les chiffres correspondent � 0sec de pause, 0.2sec de vibration, 0.1sec de pause, 0.2sec de vibration, 0.1sec de pause, 0.2sec de vibration
         
         //debug
-        vibrateAndSing = false;
+        //vibrateAndSing = false;
         
         
         if (vibrateAndSing)
