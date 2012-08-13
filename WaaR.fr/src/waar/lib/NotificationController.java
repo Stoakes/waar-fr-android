@@ -24,7 +24,7 @@ public class NotificationController {
 		
 		//pour test
 		Params.pseudo = "Guizmo";
-		Params.passWord = "testtest";
+		Params.md5Password= "testtest";
 
 		waar.lib.NotificationManager.init_notifications(c);
 		
@@ -32,7 +32,7 @@ public class NotificationController {
 		ArrayList<NameValuePair> paramList = new ArrayList<NameValuePair>();
 				
 		paramList.add(new BasicNameValuePair("pseudo", Params.pseudo));
-		paramList.add(new BasicNameValuePair("pwd", Params.passWord));
+		paramList.add(new BasicNameValuePair("pwd", Params.md5Password));
 		
 		String data = ServerHandler.postData(url, paramList);
 		Log.e("DATA RECEIVED", data);

@@ -9,10 +9,18 @@ import android.telephony.TelephonyManager;
 public class Params {
 
 	public static String pseudo;
-	public static String passWord;
 	public static String md5Password;
 	public static String phoneNumber;
 	public static String idPhone;
+	
+	
+	public static boolean notification_active;
+	public static boolean notification_active_jbd;
+	public static boolean notification_active_news;
+	public static boolean notification_active_ally;
+	public static boolean notification_active_mp;
+	
+	
 	
 	public static final String PREFS_NAME = "RemoTxtPrefs";
 	
@@ -27,22 +35,28 @@ public class Params {
 	public static void loadAllParams(Context c){
 		// Ici on permet donc la lecture de notre fichier de pr�f�rence � toutes les applications
 		SharedPreferences myPrefs = c.getSharedPreferences(PREFS_NAME, c.MODE_WORLD_READABLE);		
-		Params.pseudo = myPrefs.getString("pseudo", "");
-		Params.passWord = myPrefs.getString("pwd","" );
-		Params.idPhone = myPrefs.getString("idPhone","" );
+		Params.pseudo = myPrefs.getString("Waar_pseudo", "");
+		Params.md5Password = myPrefs.getString("Waar_pwd","");
 		
-		md5Password = passWord;
-		
-		 TelephonyManager tMgr =(TelephonyManager)c.getSystemService(Context.TELEPHONY_SERVICE);
-		 Params.phoneNumber = tMgr.getLine1Number();
+		Params.notification_active = myPrefs.getBoolean("Waar_activaterNotifications",true);
+		Params.notification_active_jbd = myPrefs.getBoolean("Waar_activaterNotifications_JbB",true);
+		Params.notification_active_news = myPrefs.getBoolean("Waar_activaterNotifications_News",true);
+		Params.notification_active_ally = myPrefs.getBoolean("Waar_activaterNotifications_MP",true);
+		Params.notification_active_mp = myPrefs.getBoolean("Waar_activaterNotifications_Ally",true);
 	}
 		
 	public static void saveAllParams(Context c){
 		SharedPreferences myPrefs = c.getSharedPreferences(PREFS_NAME, c.MODE_WORLD_READABLE);
 		SharedPreferences.Editor prefsEditor = myPrefs.edit();
-		prefsEditor.putString("pseudo", Params.pseudo);
-		prefsEditor.putString("pwd", Params.passWord);
-		prefsEditor.putString("idPhone", Params.idPhone);
+		prefsEditor.putString("Waar_pseudo", Params.pseudo);
+		prefsEditor.putString("Waar_pwd", Params.md5Password);
+		
+		prefsEditor.putBoolean("Waar_activaterNotifications",Params.notification_active);
+		prefsEditor.putBoolean("Waar_activaterNotifications_JbB",Params.notification_active_jbd);
+		prefsEditor.putBoolean("Waar_activaterNotifications_News",Params.notification_active_news);
+		prefsEditor.putBoolean("Waar_activaterNotifications_MP",Params.notification_active_ally);
+		prefsEditor.putBoolean("Waar_activaterNotifications_Ally",Params.notification_active_mp);
+		
 		prefsEditor.commit();
 	}
 	

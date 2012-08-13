@@ -14,7 +14,6 @@ public class NotificationHandler{
 	public static int ID_NOTIFICATION ;
 			
 	public static void createNotify(Context context, WaarNotification n){
-		
 		NotificationHandler.createNotify(context, n, true);
     	
     }
@@ -27,7 +26,7 @@ public class NotificationHandler{
 	public static void createNotify(Context context, WaarNotification n, boolean vibrateAndSing){		
     	NotificationManager notificationManager = (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
 	   	
-    	int icon = fr.waar.android.R.drawable.waar_notification_icon;
+    	int icon = fr.waar.android.R.drawable.w_notif_logo;
     	Notification notification = new Notification(icon, Params.NotificationPopUp , System.currentTimeMillis());  
  
     	//Le PendingIntent c'est ce qui va nous permettre d'atteindre notre deuxi�me Activity
@@ -37,6 +36,10 @@ public class NotificationHandler{
         String titreNotification = Params.WAAR_SITE_NAME;
         notification.setLatestEventInfo(context, titreNotification, n.getTexte_notification(), pendingIntent);
         //Ici les chiffres correspondent � 0sec de pause, 0.2sec de vibration, 0.1sec de pause, 0.2sec de vibration, 0.1sec de pause, 0.2sec de vibration
+        
+        //debug
+        vibrateAndSing = false;
+        
         
         if (vibrateAndSing)
         {

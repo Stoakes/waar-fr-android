@@ -42,9 +42,17 @@ public class WaarNotification {
 	}
 
 	public String getTexte_notification() {
-		return this.texte_notification.replace("%s", this.nombre_notifications.toString());
+		String txt =  this.texte_notification.replace("%s", this.nombre_notifications.toString());
+		if (this.nombre_notifications > 1)
+		{
+			txt =  this.texte_notification.replace("(s)", "s");
+			txt =  this.texte_notification.replace("(x)", "x");
+		}
+		else if(this.nombre_notifications == 1)
+		{
+			txt =  this.texte_notification.replace("(s)", "");
+			txt =  this.texte_notification.replace("(x)", "");
+		}
+		return txt;
 	}
-	
-	
-	
 }

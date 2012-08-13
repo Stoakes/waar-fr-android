@@ -20,10 +20,10 @@ public class NotificationManager {
 			notifications_avant = (ArrayList<WaarNotification> ) notifications.clone();
 		
 		notifications = new ArrayList<WaarNotification>();
-		notifications.add(new WaarNotification("JdB", 0, 42001, "Vous avez %s nouvelle(s) entrée(s) dans votre Journal de Bord.", Params.WAAR_SITE + "/royaume.php"));
-		notifications.add(new WaarNotification("News", 0, 42002, "%s nouvelle(s) news est diponible sur " + Params.WAAR_SITE_NAME + " !",Params.WAAR_SITE + "/news.php"));
-		notifications.add(new WaarNotification("Ally", 0, 42003, "Vous avez %s nouveau(x) message(s) d'alliance",Params.WAAR_SITE + "/alliance.php"));
-		notifications.add(new WaarNotification("MP", 0, 42004, "Vous avez %s nouveau(x) message(s) privé", Params.WAAR_SITE + "/messages.php"));
+		notifications.add(new WaarNotification("JdB", 0, 42001, "Journal de Bord : %s nouvelle(s) entrée(s).", Params.WAAR_SITE + "/royaume.php"));
+		notifications.add(new WaarNotification("News", 0, 42002, "News : %s nouvelle(s) news " + Params.WAAR_SITE_NAME + " !",Params.WAAR_SITE + "/news.php"));
+		notifications.add(new WaarNotification("Ally", 0, 42003, "Messages Privés : %s nouveau(x) message(s) d'alliance",Params.WAAR_SITE + "/alliance.php"));
+		notifications.add(new WaarNotification("MP", 0, 42004, "Messages Privés : %s nouveau(x) message(s) privé(s)", Params.WAAR_SITE + "/messages.php"));
 	}
 	
 	/**

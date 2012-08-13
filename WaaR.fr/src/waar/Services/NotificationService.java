@@ -11,6 +11,7 @@ import waar.lib.Params;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
+import android.os.Looper;
 
 
 public class NotificationService extends Service {
@@ -41,7 +42,9 @@ public class NotificationService extends Service {
 	    	@Override
 	        public void run() {
 	    		//NotificationHandler.createNotify(getApplicationContext(), "Waar.fr", "Vous avez un nouveau message privé.");
+	    		Looper.prepare();
 	    		NotificationController.execute(getApplicationContext());
+	    		Looper.loop();
 	        } 
 	    }, 0, 10000); 
 	}

@@ -15,5 +15,10 @@
     <string name="txtAnnuler">Annuler</string>
     <string name="test">Test</string>
     <string name="Log">Log</string>
+    <string name="txt_ActivationNotifications">Activer les notifications</string>
+    <string name="txt_Activation_Jbd">Notifications Journal</string>
+    <string name="txt_Activation_Ally">Notifications Alliances</string>
+    <string name="txt_Activation_MP">Notifications Messages Privés</string>
+    <string name="txt_Activation_News">Notifications News</string>
 
 </resources>

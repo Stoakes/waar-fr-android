@@ -12,8 +12,10 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class WaaRActivity extends Activity {
@@ -39,29 +41,41 @@ public class WaaRActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
     		super.onCreate(savedInstanceState);
             setContentView(R.layout.main);
-                        
-           
-            //webView.loadData(pageWeb, mimeType, encoding);
-            //webView.loadUrl(waarUrl);
              
             startService(new Intent(getApplicationContext(), NotificationService.class));
             //NotificationHandler.createNotify(getApplicationContext(), "Waar.fr", "Vous avez un nouveau message privé.");
-            
-            
+                       
+            loadPage();
     }
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    // Handle item selection
+	    switch (item.getItemId()) {
+	        case R.id.refresh:
+	        	webView.reload();
+	            return true;
+	        case R.id.options_menu:
+	            //on affiche l'activité options
+	        	Intent intent = new Intent(WaaRActivity.this, OptionsActivity.class);
+	        	startActivity(intent);
+	            return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
+	}
     
-    private void loadUrl(String url)
+    private void loadPage()
     {
     	 webView = (WebView) findViewById(R.id.WebView);
          
-         //pageWeb = getPage(waarUrl);
          webView.setWebViewClient(new myWebViewClient());
          webView.getSettings().setJavaScriptEnabled(true);
          
          if (this.url.equals(""))
         	 this.url = Params.WAAR_SITE;
          
-         webView.loadUrl(url);
+         webView.loadUrl(this.url);
     }
     
 	@Override

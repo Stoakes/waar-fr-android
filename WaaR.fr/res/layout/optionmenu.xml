@@ -1,4 +1,4 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 	<item android:id="@+id/options_menu" android:title="Options"></item>
-	<item android:id="@+id/compte_menu" android:title="Compte"></item>
+	<item android:id="@+id/refresh" android:title="Actualiser"></item>
 </menu>
