@@ -22,5 +22,12 @@
         </activity>
         <service android:name="waar.Services.NotificationService"></service>
         <activity android:name="waar.Activities.OptionsActivity"></activity>
+        
+        <receiver android:name="waar.lib.ReceiveBootcompleted" >
+               <intent-filter>
+                    <action android:name="android.intent.action.BOOT_COMPLETED" />
+               </intent-filter>
+		</receiver>
+
     </application>
 </manifest>

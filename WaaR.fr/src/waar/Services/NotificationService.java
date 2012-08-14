@@ -46,8 +46,7 @@ public class NotificationService extends Service {
 	    		NotificationController.execute(getApplicationContext());
 //	    		Looper.loop();
 	        } 
-	    }, 0, 10000);
+	    }, 0, 30*1000);
 	}
-
 		
 }

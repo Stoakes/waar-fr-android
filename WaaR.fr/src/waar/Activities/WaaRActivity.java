@@ -23,9 +23,6 @@ public class WaaRActivity extends Activity {
     /** Called when the activity is first created. */
     
     private WebView webView;
-    private final String mimeType = "text/html";
-    private final String encoding = "utf-8";
-    
     private String url="";
     
     public WaaRActivity() {
@@ -47,7 +44,7 @@ public class WaaRActivity extends Activity {
                        
             loadPage();
     }
-	
+		
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    // Handle item selection
@@ -76,6 +73,8 @@ public class WaaRActivity extends Activity {
         	 this.url = Params.WAAR_SITE;
          
          webView.loadUrl(this.url);
+         
+         this.url = "";
     }
     
 	@Override
@@ -100,5 +99,10 @@ public class WaaRActivity extends Activity {
 			view.loadUrl(url);
 			return true;
 		}
+	}
+	
+	public void setUrlToLoad(String value)
+	{
+		this.url = value;
 	}
 }

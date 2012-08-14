@@ -24,6 +24,12 @@ public class NotificationManager {
 		notifications.add(new WaarNotification("News", 0, 42002, "News : %s nouvelle(s) news " + Params.WAAR_SITE_NAME + " !",Params.WAAR_SITE + "/news.php"));
 		notifications.add(new WaarNotification("Ally", 0, 42003, "Messages Privés : %s nouveau(x) message(s) d'alliance",Params.WAAR_SITE + "/alliance.php"));
 		notifications.add(new WaarNotification("MP", 0, 42004, "Messages Privés : %s nouveau(x) message(s) privé(s)", Params.WAAR_SITE + "/messages.php"));
+		
+		notifications.add(new WaarNotification("erreur_param", 0, 42011, "Paramètres de connection incorrects", Params.WAAR_SITE + "/royaume.php"));
+		notifications.add(new WaarNotification("erreur_pseudo", 0, 42012, "Pseudo incorrect", Params.WAAR_SITE + "/royaume.php"));
+		notifications.add(new WaarNotification("erreur_pwd", 0, 42013, "Mot de passe incorrect", Params.WAAR_SITE + "/royaume.php"));
+		notifications.add(new WaarNotification("erreur_spam", 0, 42014, "Que fais-tu, ptit malin?", Params.WAAR_SITE + "/royaume.php"));
+		notifications.add(new WaarNotification("erreur_ban", 0, 42015, "Votre IP a été bannie.", Params.WAAR_SITE + "/royaume.php"));
 	}
 	
 	/**

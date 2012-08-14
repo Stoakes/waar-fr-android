@@ -29,10 +29,9 @@ public class NotificationHandler{
     	int icon = fr.waar.android.R.drawable.w_notif_logo;
     	Notification notification = new Notification(icon, Params.NotificationPopUp , System.currentTimeMillis());  
  
-    	//Le PendingIntent c'est ce qui va nous permettre d'atteindre notre deuxi�me Activity
-    	//ActivityNotification sera donc le nom de notre seconde Activity
     	//TODO remplacer l'intent
-        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, new Intent(context, WaaRActivity.class), 0);
+        //PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, new Intent(context, WaaRActivity.class), 0);
+    	PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, new Intent(context, WaaRActivity.class), 0);
         String titreNotification = Params.WAAR_SITE_NAME;
         notification.setLatestEventInfo(context, titreNotification, n.getTexte_notification(), pendingIntent);
         //Ici les chiffres correspondent � 0sec de pause, 0.2sec de vibration, 0.1sec de pause, 0.2sec de vibration, 0.1sec de pause, 0.2sec de vibration
