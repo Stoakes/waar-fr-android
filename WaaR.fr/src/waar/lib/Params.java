@@ -27,10 +27,14 @@ public class Params {
 	public static boolean notification_ally;
 	public static boolean notification_mp;
 	
+	public static String urlToLoad = "";
+	
 	
 	public static final String PREFS_NAME = "WaaRPrefs";
 	
-	public static final String WAAR_SITE = "http://wbeta.waar2.fr" ;
+	public static final String WAAR_SITE = "http://dev.waar2.fr" ;
+	public static final String WAAR_SITE_DEFAULT_PAGE = "/royaume.php" ;
+	public static final String WAAR_SITE_CONNECTION_PAGE = "/actions/general/connexion.php" ;
 	public static final String WAAR_SITE_NAME = "Waar Beta" ;
 	public static final String NOTIF_PAGE = "/ajax/get_notifications_mobile.php";
 	

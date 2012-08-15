@@ -12,6 +12,9 @@ import android.util.Log;
 
 public class NotificationController {
 	
+	
+	public static Boolean derniereRoutineOK = true;
+	
 	/**
 	 * Permet de lancer tout la procédure de notification
 	 * @return
@@ -22,11 +25,12 @@ public class NotificationController {
 				
 		Params.loadAllParams(c);
 		
-		Params.logParam();
+		//Params.logParam();
 		
 		if (Params.notification_active)
 		{
-			waar.lib.NotificationManager.init_notifications(c);
+			if (NotificationController.derniereRoutineOK)
+				waar.lib.NotificationManager.init_notifications(c);
 			
 			ArrayList<NameValuePair> paramList = new ArrayList<NameValuePair>();
 			
@@ -34,6 +38,9 @@ public class NotificationController {
 			paramList.add(new BasicNameValuePair("pwd", Params.md5Password));
 			
 			String data = ServerHandler.postData(url, paramList);
+			
+			if (data == null || data.equals(""))
+				NotificationController.derniereRoutineOK = false;
 			Log.e("DATA RECEIVED", data);
 			
 			NotificationController.decodeData(data);

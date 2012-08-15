@@ -9,19 +9,19 @@ public class WaarNotification {
 	public String categorie;
 	public Integer nombre_notifications;
 	public Integer id_notification;
-	public Intent intentCible;
+	public Class<?> classCible = null;
 	public String url=  "";
 	
 	private String texte_notification;
 
 	public WaarNotification(String categorie, int nombre_notifications,
-			int id_notification, String texte_notification, Intent intent) {
+			int id_notification, String texte_notification, Class<?> className) {
 		super();
 		this.categorie = categorie;
 		this.nombre_notifications = nombre_notifications;
 		this.id_notification = id_notification;
 		this.texte_notification = texte_notification;
-		this.intentCible = intent;
+		this.classCible = className;
 	}
 	
 	public WaarNotification(String categorie, int nombre_notifications,

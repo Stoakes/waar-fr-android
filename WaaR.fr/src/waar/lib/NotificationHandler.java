@@ -29,16 +29,26 @@ public class NotificationHandler{
     	int icon = fr.waar.android.R.drawable.w_notif_logo;
     	Notification notification = new Notification(icon, Params.NotificationPopUp , System.currentTimeMillis());  
  
-    	//TODO remplacer l'intent
+    	PendingIntent pendingIntent = null;
+    	
+    	int pendingIntentCode = PendingIntent.FLAG_UPDATE_CURRENT;
+    	
         //PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, new Intent(context, WaaRActivity.class), 0);
-    	PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, new Intent(context, WaaRActivity.class), 0);
+    	if (!n.url.equals(""))
+    	{
+    		Intent myIntent = new Intent(context, WaaRActivity.class);
+    		myIntent.putExtra("url", n.url);
+    		pendingIntent = PendingIntent.getActivity(context, 0, myIntent,pendingIntentCode);
+    	}
+    	else if(n.classCible!= null)
+    	{
+    		pendingIntent = PendingIntent.getActivity(context, 0, new Intent(context, n.classCible), pendingIntentCode);
+    	}
+    	
+    	
         String titreNotification = Params.WAAR_SITE_NAME;
         notification.setLatestEventInfo(context, titreNotification, n.getTexte_notification(), pendingIntent);
         //Ici les chiffres correspondent � 0sec de pause, 0.2sec de vibration, 0.1sec de pause, 0.2sec de vibration, 0.1sec de pause, 0.2sec de vibration
-        
-        //debug
-        //vibrateAndSing = false;
-        
         
         if (vibrateAndSing)
         {

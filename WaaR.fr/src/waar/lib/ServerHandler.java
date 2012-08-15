@@ -5,6 +5,7 @@ import java.net.URI;
 import java.nio.CharBuffer;
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetEncoder;
+import java.security.acl.LastOwnerException;
 import java.util.ArrayList;
 
 import org.apache.http.*;
@@ -23,8 +24,6 @@ import android.util.Log;
 
 public class ServerHandler {
 	
-	private static final String LOG_TAG = "Log : ";
-
 	
 	public static String postData(String url, ArrayList<NameValuePair> paramList) {
 	    // On cr�� un client http
@@ -50,13 +49,18 @@ public class ServerHandler {
 	        {
 	        	
 	        	//Allo Houston, on a une problème !
-	        	//TODO gérer les notifications d'erreurs
+	        	NotificationController.derniereRoutineOK = false;
 	        	
 	        }
 	        
+	        String data = new BasicResponseHandler().handleResponse(response);
+	        /*
 	        HttpEntity entity = response.getEntity();
 	        
-	        String data = EntityUtils.toString(entity, HTTP.UTF_8);
+	        String data = EntityUtils.toString(entity, HTTP.UTF_8);*/
+	        
+	        //Allo Houston, on a une problème !
+        	NotificationController.derniereRoutineOK = true;
 	        
 	        return data;
 
