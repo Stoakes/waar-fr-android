@@ -1,7 +1,5 @@
 package waar.lib;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 import android.util.Log;
 

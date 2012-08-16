@@ -1,11 +1,6 @@
 package waar.lib;
 
 import java.io.*;
-import java.net.URI;
-import java.nio.CharBuffer;
-import java.nio.charset.Charset;
-import java.nio.charset.CharsetEncoder;
-import java.security.acl.LastOwnerException;
 import java.util.ArrayList;
 
 import org.apache.http.*;
@@ -13,14 +8,11 @@ import org.apache.http.client.*;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.*;
 import org.apache.http.impl.client.*;
-import org.apache.http.message.BasicNameValuePair;
+
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpParams;
 import org.apache.http.params.HttpProtocolParams;
 import org.apache.http.protocol.HTTP;
-import org.apache.http.util.EntityUtils;
-
-import android.util.Log;
 
 public class ServerHandler {
 	
@@ -31,8 +23,6 @@ public class ServerHandler {
 	    // On cr�� notre ent�te
 	    HttpPost httppost = new HttpPost(url);
 	    
-	    String HTMLCodeResponse = "";
-
 	    try {
 	    	
 	    	HttpParams params = new BasicHttpParams();

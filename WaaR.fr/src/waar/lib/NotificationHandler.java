@@ -49,7 +49,8 @@ public class NotificationHandler{
         String titreNotification = Params.WAAR_SITE_NAME;
         notification.setLatestEventInfo(context, titreNotification, n.getTexte_notification(), pendingIntent);
         //Ici les chiffres correspondent � 0sec de pause, 0.2sec de vibration, 0.1sec de pause, 0.2sec de vibration, 0.1sec de pause, 0.2sec de vibration
-        
+
+
         if (vibrateAndSing)
         {
             notification.vibrate = new long[] {0,100,50,100};

@@ -1,7 +1,5 @@
 package waar.lib;
 
-import android.content.Intent;
-import waar.Activities.WaaRActivity;
 
 
 public class WaarNotification {

@@ -4,14 +4,11 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import waar.lib.NotificationController;
-import waar.lib.NotificationHandler;
-import waar.lib.NotificationManager;
 import waar.lib.Params;
 
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
-import android.os.Looper;
 
 
 public class NotificationService extends Service {

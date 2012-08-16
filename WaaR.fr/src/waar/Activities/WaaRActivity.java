@@ -1,31 +1,22 @@
 package waar.Activities;
 
-import java.util.ArrayList;
-
-import org.apache.http.NameValuePair;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EncodingUtils;
 
 import waar.Services.NotificationService;
 import waar.lib.Logger;
-import waar.lib.NotificationHandler;
-import waar.lib.NotificationManager;
 import waar.lib.Params;
-import waar.lib.ServerHandler;
-import waar.lib.WaarNotification;
 
 import fr.waar.android.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.webkit.WebSettings;
+import android.webkit.WebSettings.RenderPriority;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -52,11 +43,10 @@ public class WaaRActivity extends Activity {
             setContentView(R.layout.main);
             
             init();   
-              
-            
+
             //this.loadPage();
             
-            String url = Params.WAAR_SITE + Params.WAAR_SITE_DEFAULT_PAGE;
+            String url = Params.WAAR_SITE_DEFAULT_PAGE;
             this.ConnectAndRedirect(url);
             
             onNewIntent(getIntent());   
@@ -74,6 +64,8 @@ public class WaaRActivity extends Activity {
         webView.setWebViewClient(new myWebViewClient());
         
         webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setRenderPriority(RenderPriority.HIGH);
+        webView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
 	}
 
     
@@ -89,23 +81,12 @@ public class WaaRActivity extends Activity {
 
     	String URL_CONNECTION = Params.WAAR_SITE + Params.WAAR_SITE_CONNECTION_PAGE;
     	
-		/*ArrayList<NameValuePair> paramList = new ArrayList<NameValuePair>();
-		
-		paramList.add(new BasicNameValuePair("pseudo", Params.pseudo));
-		paramList.add(new BasicNameValuePair("pwd", Params.md5Password));
-		paramList.add(new BasicNameValuePair("page", pageToLoad));*/
-		
-		String postData = "pseudo=" +Params.pseudo+"&pwd="+Params.md5Password+"&pwd=" + pageToLoad;
+    	String postData = "psd=" +Params.pseudo+"&mdp="+Params.md5Password+"&page=" + pageToLoad;
 		
 		webView.postUrl(URL_CONNECTION,EncodingUtils.getBytes(postData, "BASE64"));
 		
 		Logger.log("Page chargée : " + URL_CONNECTION + " - " +postData );
-    	
-    	//String data = ServerHandler.postData(URL_CONNECTION, paramList);
-    	
-    	/*Logger.log(data);
 
-    	webView.loadData(data, "text/html", "utf-8");*/
    }
     
 	@Override

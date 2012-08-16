@@ -1,12 +1,9 @@
 package waar.lib;
 import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.Hashtable;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
-import android.app.NotificationManager;
 import android.content.Context;
 import android.util.Log;
 
