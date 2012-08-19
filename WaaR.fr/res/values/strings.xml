@@ -20,5 +20,7 @@
     <string name="txt_Activation_Ally">Notifications Alliances</string>
     <string name="txt_Activation_MP">Notifications Messages Privés</string>
     <string name="txt_Activation_News">Notifications News</string>
+    <string name="lancer_waar">Lancer Waar !</string>
+    <string name="enregistrer">Enregistrer</string>
 
 </resources>

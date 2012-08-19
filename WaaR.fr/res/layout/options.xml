@@ -34,6 +34,13 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/boutton_lancer_waar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/Indent_left_options"
+        android:text="@string/lancer_waar" />
 
     <CheckBox
         android:id="@+id/chkbox_activernotifications"
@@ -91,7 +98,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_weight="0.67"
-            android:text="@string/txtOK" />
+            android:text="@string/enregistrer" />
 
         <Button
             android:id="@+id/btnAnnuler"

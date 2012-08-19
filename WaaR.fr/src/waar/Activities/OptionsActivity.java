@@ -1,10 +1,14 @@
 package waar.Activities;
 
+import waar.Services.NotificationService;
+import waar.lib.BrowserLauncher;
 import waar.lib.Params;
 
 import fr.waar.android.R;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Browser;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -27,7 +31,7 @@ public class OptionsActivity extends Activity {
     
     private Button boutton_OK;
     private Button boutton_Annuler;
-    
+    private Button boutton_Lancer_Waar;
     
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,6 +50,7 @@ public class OptionsActivity extends Activity {
             
             boutton_OK = (Button) findViewById(R.id.btnOK);
             boutton_Annuler= (Button) findViewById(R.id.btnAnnuler);
+            boutton_Lancer_Waar= (Button) findViewById(R.id.boutton_lancer_waar);
             
             boutton_OK.setOnClickListener(new OnClickListener() {
     			public void onClick(View v) {
@@ -58,13 +63,27 @@ public class OptionsActivity extends Activity {
     			}
     		});
             
+            boutton_Lancer_Waar.setOnClickListener( new OnClickListener() {
+    			public void onClick(View v) {
+    				runWaar();
+    			}
+    		});
+            
             CkboxNotif.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 				public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 						MaJActivationCheckboxes(isChecked);
 				}
 			});
        
+            startService(new Intent(getApplicationContext(), NotificationService.class));
+            
             remplirFormulaire();
+	}
+	
+	
+	private void runWaar()
+	{
+		BrowserLauncher.runOnBrowser(Params.WAAR_SITE + Params.WAAR_SITE_DEFAULT_PAGE, this);
 	}
 	
 	private void MaJActivationCheckboxes(boolean activer)
@@ -127,5 +146,7 @@ public class OptionsActivity extends Activity {
 		Params.notification_active_news = this.CkboxNotif_News.isChecked();
 		Params.saveAllParams(getApplicationContext());
 	}
+	
+	
 
 }

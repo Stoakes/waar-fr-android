@@ -8,6 +8,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.media.RingtoneManager;
+import android.net.Uri;
 
 public class NotificationHandler{
 
@@ -33,23 +34,23 @@ public class NotificationHandler{
     	
     	int pendingIntentCode = PendingIntent.FLAG_UPDATE_CURRENT;
     	
+    	Intent intent= null;
         //PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, new Intent(context, WaaRActivity.class), 0);
     	if (!n.url.equals(""))
     	{
-    		Intent myIntent = new Intent(context, WaaRActivity.class);
-    		myIntent.putExtra("url", n.url);
-    		pendingIntent = PendingIntent.getActivity(context, 0, myIntent,pendingIntentCode);
+
+    		intent = new Intent(Intent.ACTION_VIEW, Uri.parse(n.url));
     	}
     	else if(n.classCible!= null)
     	{
-    		pendingIntent = PendingIntent.getActivity(context, 0, new Intent(context, n.classCible), pendingIntentCode);
+    		intent =  new Intent(context, n.classCible);
     	}
     	
+    	pendingIntent = PendingIntent.getActivity(context, 0, intent, pendingIntentCode);
     	
         String titreNotification = Params.WAAR_SITE_NAME;
         notification.setLatestEventInfo(context, titreNotification, n.getTexte_notification(), pendingIntent);
         //Ici les chiffres correspondent � 0sec de pause, 0.2sec de vibration, 0.1sec de pause, 0.2sec de vibration, 0.1sec de pause, 0.2sec de vibration
-
 
         if (vibrateAndSing)
         {
@@ -62,8 +63,9 @@ public class NotificationHandler{
             notification.ledOffMS = 200;    //Set led blink (Off in ms)
             notification.ledARGB = Notification.DEFAULT_LIGHTS;   //Set led color
         }
+        notification.flags =  Notification.FLAG_AUTO_CANCEL;
 
-
+        Logger.log("NOTIFy");
         notificationManager.notify(n.id_notification , notification);
     }
 	
