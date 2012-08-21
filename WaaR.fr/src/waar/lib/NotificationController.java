@@ -56,6 +56,9 @@ public class NotificationController {
 	 */
 	private static void decodeData(String data)
 	{
+		data = data.replace("\t", "");
+		data = data.replace(" ", "");
+		
 		String[] dataTable = data.split(";");
 		int nb_notifications = 0;
 		
@@ -63,22 +66,22 @@ public class NotificationController {
 		{
 			if (element.contains("JdB") && Params.notification_active_jbd)
 			{
-				nb_notifications = Integer.parseInt(element.replace(" JdB", ""));
+				nb_notifications = Integer.parseInt(element.replace("JdB", ""));
 				waar.lib.NotificationManager.getNotification("JdB").nombre_notifications = nb_notifications;
 			}
 			else if(element.contains("Ally")  && Params.notification_active_ally)
 			{
-				nb_notifications = Integer.parseInt(element.replace(" Ally", ""));
+				nb_notifications = Integer.parseInt(element.replace("Ally", ""));
 				waar.lib.NotificationManager.getNotification("Ally").nombre_notifications = nb_notifications;
 			}
 			else if(element.contains("News") && Params.notification_active_news)
 			{
-				nb_notifications = Integer.parseInt(element.replace(" News", ""));
+				nb_notifications = Integer.parseInt(element.replace("News", ""));
 				waar.lib.NotificationManager.getNotification("News").nombre_notifications = nb_notifications;
 			}
 			else if(element.contains("MP")  && Params.notification_active_mp)
 			{
-				nb_notifications = Integer.parseInt(element.replace(" MP", ""));
+				nb_notifications = Integer.parseInt(element.replace("MP", ""));
 				waar.lib.NotificationManager.getNotification("MP").nombre_notifications = nb_notifications;
 			}
 		}

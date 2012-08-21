@@ -24,7 +24,7 @@ public class NotificationManager {
 		notifications.add(new WaarNotification("Ally", 0, 42003, "Alliance : %s nouveau(x) message(s) d'alliance",Params.WAAR_SITE +  "/alliance.php"));
 		notifications.add(new WaarNotification("MP", 0, 42004, "Messages Privés : %s nouveau(x) message(s)", Params.WAAR_SITE + "/messages.php"));
 		
-		notifications.add(new WaarNotification("erreur_param", 0, 42011, "Paramètres de connection incorrects",OptionsActivity.class));
+		notifications.add(new WaarNotification("erreur_param", 0, 42011, "Paramètres de connexion incorrects",OptionsActivity.class));
 		notifications.add(new WaarNotification("erreur_pseudo", 0, 42012, "Pseudo incorrect",OptionsActivity.class));
 		notifications.add(new WaarNotification("erreur_pwd", 0, 42013, "Mot de passe incorrect" ,OptionsActivity.class));
 		notifications.add(new WaarNotification("erreur_spam", 0, 42014, "Que fais-tu, ptit malin?" ,OptionsActivity.class));
