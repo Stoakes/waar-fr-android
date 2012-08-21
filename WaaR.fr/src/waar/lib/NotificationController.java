@@ -108,6 +108,10 @@ public class NotificationController {
 		{
 			waar.lib.NotificationManager.getNotification("erreur_ban").nombre_notifications = 1;
 		}
+		else if (data.contains("APP_MAJ"))
+		{
+			waar.lib.NotificationManager.getNotification("application_maj").nombre_notifications = 1;
+		}
 	}
 
 }

@@ -29,6 +29,7 @@ public class NotificationManager {
 		notifications.add(new WaarNotification("erreur_pwd", 0, 42013, "Mot de passe incorrect" ,OptionsActivity.class));
 		notifications.add(new WaarNotification("erreur_spam", 0, 42014, "Que fais-tu, ptit malin?" ,OptionsActivity.class));
 		notifications.add(new WaarNotification("erreur_ban", 0, 42015, "Votre IP a été bannie.",OptionsActivity.class));
+		notifications.add(new WaarNotification("application_maj", 0, 42016, "Une nouvelle mise à jour est disponible.", Params.WAAR_SITE + "/android/"));
 	}
 	
 	/**
