@@ -52,6 +52,7 @@ public class NotificationHandler{
         notification.setLatestEventInfo(context, titreNotification, n.getTexte_notification(), pendingIntent);
         //Ici les chiffres correspondent � 0sec de pause, 0.2sec de vibration, 0.1sec de pause, 0.2sec de vibration, 0.1sec de pause, 0.2sec de vibration
 
+        //debug
         vibrateAndSing = false;
         
         if (vibrateAndSing)

@@ -41,14 +41,15 @@ public class NotificationController {
 				derniere_routine_OK = Calendar.getInstance();
 				derniere_routine_OK.setTime(new Date(0));
 			}
-				
 			
 			
-			derniere_routine_OK.add(Calendar.SECOND, Params.tempo_entre_2_check_sec-1);
+			derniere_routine_OK.add(Calendar.SECOND, Params.tempo_entre_2_check_sec-2);
 			
 			Calendar maintenant = Calendar.getInstance();
 			String monHeure = sdf.format(derniere_routine_OK.getTime());
 			String str_maintenant = sdf.format(maintenant.getTime());
+			
+			Logger.log("next : " + monHeure);
 						
 			if (derniere_routine_OK.before(maintenant))
 			{
@@ -154,6 +155,11 @@ public class NotificationController {
 		{
 			waar.lib.NotificationManager.getNotification("erreur_ban").nombre_notifications = 1;
 			data_analysed = true;
+		}
+		else if (data.contains("NO NOTIF"))
+		{
+			data_analysed = true;
+			Logger.log("pas de notifications");
 		}
 		/*else if (data.contains("APP_MAJ"))
 		{
