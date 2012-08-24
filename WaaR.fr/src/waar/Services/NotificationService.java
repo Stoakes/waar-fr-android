@@ -1,5 +1,6 @@
 package waar.Services;
 
+import java.util.Calendar;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -30,6 +31,12 @@ public class NotificationService extends Service {
         
 		t = new Timer();
 	}
+//	
+//	private void maj_lastcheck(Calendar val)
+//	{
+//		if (val!=null)
+//			Params.dernier_check = val;
+//	}
 	
 	@Override
 	public void onStart(Intent intent, int startId)
@@ -41,9 +48,11 @@ public class NotificationService extends Service {
 	        public void run() {
 //	    		Looper.prepare();
 	    		NotificationController.execute(getApplicationContext());
+//	    		maj_lastcheck(lastcheck);
+	
 //	    		Looper.loop();
 	        } 
-	    }, 0, 30*1000);
+	    }, 0, Params.tempo_entre_2_check_sec*1000);
 	}
 		
 }

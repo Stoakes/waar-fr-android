@@ -38,6 +38,10 @@ public class OptionsActivity extends Activity {
     		super.onCreate(savedInstanceState);
             setContentView(R.layout.options);
             
+            String app_name = getString(R.string.app_name);
+            String app_version = getString(R.string.app_version);
+            setTitle(app_name + " V" + app_version);
+            
             champPseudo = (EditText) findViewById(R.id.txtFieldPseudo);
             champPwd = (EditText) findViewById(R.id.txtFieldMdP);
             

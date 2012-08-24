@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">WaaR Beta</string>
+    <string name="app_version">0.3</string>
     <string name="description">Beta - Application du jeu en ligne</string>
     <string name="Apptheme">WaaR jeu en ligne Web medieval online multiplayer petit multijoueur</string>
     

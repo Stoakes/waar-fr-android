@@ -1,5 +1,8 @@
 package waar.lib;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
@@ -35,9 +38,14 @@ public class Params {
 	public static final String  NotificationTitle = "Waar Beta";
 	public static final String  NotificationPopUp = "Notification(s) Waar !";
 	
+	public static final int tempo_entre_2_check_sec = 30;
+	
+	public static Calendar dernier_check = null;
+	
 	public static void loadAllParams(Context c){
 		// Ici on permet donc la lecture de notre fichier de pr�f�rence � toutes les applications
-		SharedPreferences myPrefs = c.getSharedPreferences(PREFS_NAME, c.MODE_WORLD_READABLE);		
+		SharedPreferences myPrefs = c.getSharedPreferences(PREFS_NAME, c.MODE_WORLD_READABLE);
+		
 		Params.pseudo = myPrefs.getString("Waar_pseudo", "");
 		Params.md5Password = myPrefs.getString("Waar_pwd","");
 		
@@ -80,4 +88,26 @@ public class Params {
 		
 		Log.e("PARAM", txt);
 	}
+	
+	public static Calendar getDate(String key, Context c)
+	{
+		long val;
+		SharedPreferences myPrefs = c.getSharedPreferences(PREFS_NAME, c.MODE_WORLD_READABLE);
+		val = myPrefs.getLong(key, 0);
+		
+		Calendar cal =  Calendar.getInstance();
+		cal.setTimeInMillis(val);
+		
+		return cal;
+	}
+	
+	public static void setDate(String key, Calendar ma_date, Context c)
+	{
+		long val = ma_date.getTimeInMillis();
+		SharedPreferences myPrefs = c.getSharedPreferences(PREFS_NAME, c.MODE_WORLD_READABLE);
+		SharedPreferences.Editor prefsEditor = myPrefs.edit();
+		prefsEditor.putLong(key, val);
+		prefsEditor.commit();
+	}
+	
 }
