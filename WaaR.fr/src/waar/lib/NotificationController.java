@@ -156,7 +156,7 @@ public class NotificationController {
 			waar.lib.NotificationManager.getNotification("erreur_ban").nombre_notifications = 1;
 			data_analysed = true;
 		}
-		else if (data.contains("NO NOTIF"))
+		else if (data.contains("NO_NOTIF"))
 		{
 			data_analysed = true;
 			Logger.log("pas de notifications");
