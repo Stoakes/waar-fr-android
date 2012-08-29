@@ -1,11 +1,12 @@
-package waar.Services;
+package fr.waar.android.service;
 
 import java.util.Calendar;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import waar.lib.NotificationController;
-import waar.lib.Params;
+import fr.waar.android.lib.NotificationController;
+import fr.waar.android.lib.Params;
+
 
 import android.app.Service;
 import android.content.Intent;

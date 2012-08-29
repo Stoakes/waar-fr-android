@@ -1,8 +1,9 @@
-package waar.lib;
+package fr.waar.android.lib;
 
 import java.util.ArrayList;
 
-import waar.Activities.OptionsActivity;
+import fr.waar.android.activity.OptionsActivity;
+
 
 import android.content.Context;
 

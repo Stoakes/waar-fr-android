@@ -1,4 +1,4 @@
-package waar.lib;
+package fr.waar.android.lib;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -54,7 +54,7 @@ public class NotificationController {
 			if (derniere_routine_OK.before(maintenant))
 			{
 				
-				waar.lib.NotificationManager.init_notifications(c);
+				fr.waar.android.lib.NotificationManager.init_notifications(c);
 				
 				ArrayList<NameValuePair> paramList = new ArrayList<NameValuePair>();
 				
@@ -72,7 +72,7 @@ public class NotificationController {
 				//si il y a des resultats.
 				if (res)
 				{
-					waar.lib.NotificationManager.MaJ_Notifcations(c);
+					fr.waar.android.lib.NotificationManager.MaJ_Notifcations(c);
 				}
 				Params.dernier_check = maintenant;
 			}
@@ -106,25 +106,25 @@ public class NotificationController {
 			if (element.contains("JdB") && Params.notification_active_jbd)
 			{
 				nb_notifications = Integer.parseInt(element.replace("JdB", ""));
-				waar.lib.NotificationManager.getNotification("JdB").nombre_notifications = nb_notifications;
+				fr.waar.android.lib.NotificationManager.getNotification("JdB").nombre_notifications = nb_notifications;
 				data_analysed = true;
 			}
 			else if(element.contains("Ally")  && Params.notification_active_ally)
 			{
 				nb_notifications = Integer.parseInt(element.replace("Ally", ""));
-				waar.lib.NotificationManager.getNotification("Ally").nombre_notifications = nb_notifications;
+				fr.waar.android.lib.NotificationManager.getNotification("Ally").nombre_notifications = nb_notifications;
 				data_analysed = true;
 			}
 			else if(element.contains("News") && Params.notification_active_news)
 			{
 				nb_notifications = Integer.parseInt(element.replace("News", ""));
-				waar.lib.NotificationManager.getNotification("News").nombre_notifications = nb_notifications;
+				fr.waar.android.lib.NotificationManager.getNotification("News").nombre_notifications = nb_notifications;
 				data_analysed = true;
 			}
 			else if(element.contains("MP")  && Params.notification_active_mp)
 			{
 				nb_notifications = Integer.parseInt(element.replace("MP", ""));
-				waar.lib.NotificationManager.getNotification("MP").nombre_notifications = nb_notifications;
+				fr.waar.android.lib.NotificationManager.getNotification("MP").nombre_notifications = nb_notifications;
 				data_analysed = true;
 			}
 		}
@@ -132,28 +132,28 @@ public class NotificationController {
 		//gestion des erreurs
 		if (data.contains("ERREUR_PARAM"))
 		{
-			WaarNotification n = waar.lib.NotificationManager.getNotification("erreur_param");
+			WaarNotification n = fr.waar.android.lib.NotificationManager.getNotification("erreur_param");
 			n.nombre_notifications = 1;
 			data_analysed = true;
 		}
 		else if (data.contains("ERREUR_PSEUDO"))
 		{
-			waar.lib.NotificationManager.getNotification("erreur_pseudo").nombre_notifications = 1;
+			fr.waar.android.lib.NotificationManager.getNotification("erreur_pseudo").nombre_notifications = 1;
 			data_analysed = true;
 		}
 		else if (data.contains("ERREUR_MDP"))
 		{
-			waar.lib.NotificationManager.getNotification("erreur_pwd").nombre_notifications = 1;;
+			fr.waar.android.lib.NotificationManager.getNotification("erreur_pwd").nombre_notifications = 1;;
 			data_analysed = true;
 		}
 		else if (data.contains("ERREUR_SPAM"))
 		{
-			waar.lib.NotificationManager.getNotification("erreur_spam").nombre_notifications = 1;
+			fr.waar.android.lib.NotificationManager.getNotification("erreur_spam").nombre_notifications = 1;
 			data_analysed = true;
 		}
 		else if (data.contains("ERREUR_IPBANNIE"))
 		{
-			waar.lib.NotificationManager.getNotification("erreur_ban").nombre_notifications = 1;
+			fr.waar.android.lib.NotificationManager.getNotification("erreur_ban").nombre_notifications = 1;
 			data_analysed = true;
 		}
 		else if (data.contains("NO_NOTIF"))

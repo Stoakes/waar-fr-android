@@ -1,4 +1,4 @@
-package waar.lib;
+package fr.waar.android.lib;
 
 import java.io.*;
 import java.util.ArrayList;

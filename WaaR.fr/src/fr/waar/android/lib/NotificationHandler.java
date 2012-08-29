@@ -1,6 +1,7 @@
-package waar.lib;
+package fr.waar.android.lib;
 
-import waar.Activities.WaaRActivity;
+import fr.waar.android.activity.WaaRActivity;
+
 import android.R;
 import android.app.Notification;
 import android.app.NotificationManager;

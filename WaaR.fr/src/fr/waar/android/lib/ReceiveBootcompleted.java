@@ -1,6 +1,7 @@
-package waar.lib;
+package fr.waar.android.lib;
 
-import waar.Services.NotificationService;
+import fr.waar.android.service.NotificationService;
+
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;

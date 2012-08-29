@@ -1,10 +1,11 @@
-package waar.Activities;
+package fr.waar.android.activity;
 
-import waar.Services.NotificationService;
-import waar.lib.BrowserLauncher;
-import waar.lib.Params;
+
 
 import fr.waar.android.R;
+import fr.waar.android.lib.BrowserLauncher;
+import fr.waar.android.lib.Params;
+import fr.waar.android.service.NotificationService;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

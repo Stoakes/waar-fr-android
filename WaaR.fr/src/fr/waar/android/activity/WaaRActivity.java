@@ -1,12 +1,13 @@
-package waar.Activities;
+package fr.waar.android.activity;
 
 import org.apache.http.util.EncodingUtils;
 
-import waar.Services.NotificationService;
-import waar.lib.Logger;
-import waar.lib.Params;
+
 
 import fr.waar.android.R;
+import fr.waar.android.lib.Logger;
+import fr.waar.android.lib.Params;
+import fr.waar.android.service.NotificationService;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
