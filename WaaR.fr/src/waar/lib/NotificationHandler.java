@@ -53,7 +53,7 @@ public class NotificationHandler{
         //Ici les chiffres correspondent � 0sec de pause, 0.2sec de vibration, 0.1sec de pause, 0.2sec de vibration, 0.1sec de pause, 0.2sec de vibration
 
         //debug
-        vibrateAndSing = false;
+        //vibrateAndSing = false;
         
         if (vibrateAndSing)
         {
@@ -68,7 +68,7 @@ public class NotificationHandler{
         }
         notification.flags =  Notification.FLAG_AUTO_CANCEL;
 
-        Logger.log("NOTIFy");
+//        Logger.log("NOTIFy");
         notificationManager.notify(n.id_notification , notification);
     }
 	

@@ -49,7 +49,7 @@ public class NotificationController {
 			String monHeure = sdf.format(derniere_routine_OK.getTime());
 			String str_maintenant = sdf.format(maintenant.getTime());
 			
-			Logger.log("next : " + monHeure);
+			//Logger.log("next : " + monHeure);
 						
 			if (derniere_routine_OK.before(maintenant))
 			{
@@ -78,7 +78,7 @@ public class NotificationController {
 			}
 			else
 			{
-				Logger.log("Dernier check trop court !");
+//				Logger.log("Dernier check trop court !");
 			}
 		}
 		
@@ -159,7 +159,7 @@ public class NotificationController {
 		else if (data.contains("NO_NOTIF"))
 		{
 			data_analysed = true;
-			Logger.log("pas de notifications");
+//			Logger.log("pas de notifications");
 		}
 		/*else if (data.contains("APP_MAJ"))
 		{
