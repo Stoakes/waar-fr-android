@@ -88,7 +88,7 @@ public class OptionsActivity extends Activity {
 	
 	private void runWaar()
 	{
-		BrowserLauncher.runOnBrowser(Params.WAAR_SITE + Params.WAAR_SITE_DEFAULT_PAGE, this);
+		BrowserLauncher.runOnBrowser(Params.getFullUrl("royaume.php"), this);
 	}
 	
 	private void MaJActivationCheckboxes(boolean activer)
@@ -132,7 +132,7 @@ public class OptionsActivity extends Activity {
 	{
 		Params.loadAllParams(getApplicationContext());
 		this.champPseudo.setText(Params.pseudo);
-		this.champPwd.setText(Params.md5Password);
+		this.champPwd.setText(Params.password);
 		this.CkboxNotif.setChecked(Params.notification_active);
 		this.CkboxNotif_Ally.setChecked(Params.notification_active_ally);
 		this.CkboxNotif_Jbd.setChecked(Params.notification_active_jbd);
@@ -143,7 +143,7 @@ public class OptionsActivity extends Activity {
 	private void sauvegarderDonnees()
 	{
 		Params.pseudo = this.champPseudo.getText().toString();
-		Params.md5Password = this.champPwd.getText().toString();
+		Params.password = this.champPwd.getText().toString();
 		Params.notification_active = this.CkboxNotif.isChecked();
 		Params.notification_active_ally = this.CkboxNotif_Ally.isChecked();
 		Params.notification_active_jbd = this.CkboxNotif_Jbd.isChecked();

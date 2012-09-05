@@ -10,6 +10,7 @@ import android.util.Log;
 public class Params {
 
 	public static String pseudo;
+	public static String password;
 	public static String md5Password;
 	public static String phoneNumber;
 	public static String idPhone;
@@ -35,6 +36,8 @@ public class Params {
 	public static final String WAAR_SITE_NAME = "Waar Beta" ;
 	public static final String NOTIF_PAGE = "/ajax/get_notifications_mobile.php";
 	
+	public static final String GRAIN_DE_SEL = "aciliqu";
+	
 	public static final String  NotificationTitle = "Waar Beta";
 	public static final String  NotificationPopUp = "Notification(s) Waar !";
 	
@@ -47,7 +50,8 @@ public class Params {
 		SharedPreferences myPrefs = c.getSharedPreferences(PREFS_NAME, c.MODE_WORLD_READABLE);
 		
 		Params.pseudo = myPrefs.getString("Waar_pseudo", "");
-		Params.md5Password = myPrefs.getString("Waar_pwd","");
+		Params.password = myPrefs.getString("Waar_pwd","");
+		Params.setMD5Password();
 		
 		Params.notification_active = myPrefs.getBoolean("Waar_activaterNotifications",true);
 		Params.notification_active_jbd = myPrefs.getBoolean("Waar_activaterNotifications_JbB",true);
@@ -60,7 +64,8 @@ public class Params {
 		SharedPreferences myPrefs = c.getSharedPreferences(PREFS_NAME, c.MODE_WORLD_READABLE);
 		SharedPreferences.Editor prefsEditor = myPrefs.edit();
 		prefsEditor.putString("Waar_pseudo", Params.pseudo);
-		prefsEditor.putString("Waar_pwd", Params.md5Password);
+		prefsEditor.putString("Waar_pwd", Params.password);
+		Params.setMD5Password();
 		
 		prefsEditor.putBoolean("Waar_activaterNotifications",Params.notification_active);
 		prefsEditor.putBoolean("Waar_activaterNotifications_JbB",Params.notification_active_jbd);
@@ -110,4 +115,13 @@ public class Params {
 		prefsEditor.commit();
 	}
 	
+	public static String getFullUrl(String page)
+	{
+		return WAAR_SITE + WAAR_SITE_CONNECTION_PAGE + "?psd=" + Params.pseudo + "&mdp=" + Params.md5Password + "&page=" + page;
+	}
+	
+	public static void setMD5Password()
+	{
+		Params.md5Password = MD5Encrypter.encryptMD5(Params.password + GRAIN_DE_SEL);
+	}
 }

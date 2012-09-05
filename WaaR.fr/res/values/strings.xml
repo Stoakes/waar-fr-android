@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">WaaR Beta</string>
-    <string name="app_version">0.3</string>
+    <string name="app_name">Waar Beta</string>
+    <string name="app_version">0.5</string>
     <string name="description">Beta - Application du jeu en ligne</string>
-    <string name="Apptheme">WaaR jeu en ligne Web medieval online multiplayer petit multijoueur</string>
-    
+    <string name="Apptheme">Waar jeu en ligne Web medieval online multiplayer petit multijoueur</string>
     <string name="EnvoyerButtonTxt">OK</string>
     <string name="ServiceButtonText">Test Service</string>
     <string name="btnHTTPGet">Get Page Web</string>
@@ -23,5 +22,4 @@
     <string name="txt_Activation_News">Notifications News</string>
     <string name="lancer_waar">Lancer Waar !</string>
     <string name="enregistrer">Enregistrer</string>
-
 </resources>

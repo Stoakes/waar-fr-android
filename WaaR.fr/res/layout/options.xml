@@ -3,110 +3,133 @@
     android:layout_height="fill_parent"
     android:gravity="fill"
     android:orientation="vertical" >
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/labelEmail"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <EditText
-        android:id="@+id/txtFieldPseudo"
+    <ScrollView
+        android:id="@+id/scrollView1"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textEmailAddress" >
-
-        <requestFocus />
-    </EditText>
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/labelMdP"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <EditText
-        android:id="@+id/txtFieldMdP"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword" />
-
-    <Button
-        android:id="@+id/boutton_lancer_waar"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/Indent_left_options"
-        android:text="@string/lancer_waar" />
-
-    <CheckBox
-        android:id="@+id/chkbox_activernotifications"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/Indent_left_options"
-        android:text="@string/txt_ActivationNotifications" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
-
-        <CheckBox
-            android:id="@+id/chkbox_activer_Jbd"
-            android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/Indent_left_options"
-            android:text="@string/txt_Activation_Jbd" />
+            android:gravity="fill"
+            android:orientation="vertical" >
 
-        <CheckBox
-            android:id="@+id/chkbox_activer_MP"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/Indent_left_options"
-            android:text="@string/txt_Activation_MP" />
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/labelEmail"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
-        <CheckBox
-            android:id="@+id/chkbox_activer_Ally"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/Indent_left_options"
-            android:text="@string/txt_Activation_Ally" />
+            <EditText
+                android:id="@+id/txtFieldPseudo"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textEmailAddress" >
 
-        <CheckBox
-            android:id="@+id/chkbox_activer_News"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/Indent_left_options"
-            android:text="@string/txt_Activation_News" />
-    </LinearLayout>
+                <requestFocus />
+            </EditText>
 
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/labelMdP"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <EditText
+                android:id="@+id/txtFieldMdP"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPassword" />
+
+            <Button
+                android:id="@+id/boutton_lancer_waar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/Indent_left_options"
+                android:text="@string/lancer_waar" />
+
+            
+
+            <CheckBox
+                android:id="@+id/chkbox_activernotifications"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/Indent_left_options"
+                android:text="@string/txt_ActivationNotifications" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <CheckBox
+                    android:id="@+id/chkbox_activer_Jbd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/Indent_left_options"
+                    android:text="@string/txt_Activation_Jbd" />
+
+                <CheckBox
+                    android:id="@+id/chkbox_activer_MP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/Indent_left_options"
+                    android:text="@string/txt_Activation_MP" />
+
+                <CheckBox
+                    android:id="@+id/chkbox_activer_Ally"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/Indent_left_options"
+                    android:text="@string/txt_Activation_Ally" />
+
+                <CheckBox
+                    android:id="@+id/chkbox_activer_News"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/Indent_left_options"
+                    android:text="@string/txt_Activation_News" />
+            </LinearLayout>
+            
+            <LinearLayout
+                android:id="@+id/linearLayout4"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+            </LinearLayout>
+            
+                     
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_gravity="bottom"
-        android:baselineAligned="true"
-        android:gravity="center_horizontal|center_vertical|fill|fill_horizontal" >
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom" >
 
         <Button
             android:id="@+id/btnOK"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:layout_weight="0.67"
+            android:layout_weight="0.5"
             android:text="@string/enregistrer" />
 
         <Button
             android:id="@+id/btnAnnuler"
-            android:layout_width="0dp"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:layout_weight="0.83"
+            android:layout_weight="0.5"
             android:text="@string/txtAnnuler" />
     </LinearLayout>
+    
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

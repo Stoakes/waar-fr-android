@@ -39,7 +39,6 @@ public class NotificationHandler{
         //PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, new Intent(context, WaaRActivity.class), 0);
     	if (!n.url.equals(""))
     	{
-
     		intent = new Intent(Intent.ACTION_VIEW, Uri.parse(n.url));
     	}
     	else if(n.classCible!= null)
